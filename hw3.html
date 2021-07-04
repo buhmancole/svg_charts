@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Homework 3</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<style>
+		body {
+			font-family: sans-serif, Arial;
+			background-color: lightblue;
+		}
+		div {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+			padding: 10px;
+			border: 2px solid black;
+			border-radius: 20px;
+			background-color: white;
+		}
+		div div, body > div:first-child {
+			flex-direction: column;
+		}
+		body > div {
+			background-color: whitesmoke;
+		}
+		h2, h4 {
+			padding: 0px 30px;
+		}
+		section {
+			display: flex;
+			margin: 10px;
+		}
+
+		input {
+			opacity: 0;
+			position: fixed;
+			width: 0;
+		}
+		label {
+			flex-grow: 1;
+			display: inline-block;
+			background-color: gainsboro;
+			padding: 10px;
+			margin: 2px;
+			border: 2px solid black;
+			border-radius: 4px;
+		}
+		input:checked + label {
+			background-color: deepskyblue;
+		}
+		label:hover {
+			cursor: pointer;
+			background-color: lightskyblue;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h2>CS-5820 Homework 3</h2>
+		<h4>Cole Buhman - buhmancole@gmail.com - A02228854</h4>
+	</div>
+	
+	<div>
+		<div class="bardiv">
+			<svg class="barchart" width="400" height="400"></svg>
+			<section>
+				<input type="checkbox" id="bar2015" name="year" value="bar2015" checked>
+				<label for="bar2015">2015</label>	
+				<input type="checkbox" id="bar2016" name="year" value="bar2016" checked>
+				<label for="bar2016">2016</label>
+				<input type="checkbox" id="bar2017" name="year" value="bar2017" checked>
+				<label for="bar2017">2017</label>
+				<input type="checkbox" id="bar2018" name="year" value="bar2018" checked>
+				<label for="bar2018">2018</label>
+				<input type="checkbox" id="bar2019" name="year" value="bar2019" checked>
+				<label for="bar2019">2019</label>
+			</section>
+		</div>
+		
+		<div class="linediv">
+			<svg class="linechart" width="400" height="400"></svg>
+			<section>
+				<input type="radio" id="tweetmonth" name="tweetval" value="tweetmonth">
+				<label for="tweetmonth">Per month</label>
+				<input type="radio" id="tweetyear" name="tweetval" value="tweetyear" checked>
+				<label for="tweetyear">Per year</label>	
+			</section>
+		</div>
+		
+		<div class="areadiv">
+			<svg class="areachart" width="400" height="400"></svg>
+			<section>
+				<input type="radio" id="casenew" name="caseval" value="casenew" checked>
+				<label for="casenew">New cases</label>
+				<input type="radio" id="casetotal" name="caseval" value="casetotal">
+				<label for="casetotal">Total cases</label>	
+			</section>
+		</div>
+		
+		<div class="scatterdiv">
+			<svg class="scatterchart" width="400" height="400"></svg>
+			<section>
+				<input type="radio" id="firemonth" name="fireval" value="firemonth">
+				<label for="firemonth">By month</label>
+				<input type="radio" id="fireyear" name="fireval" value="fireyear" checked>
+				<label for="fireyear">By year</label>	
+			</section>
+		</div>
+	</div>
+	<script onload="init()" src="main.js"></script>
+</body>
+</html>
